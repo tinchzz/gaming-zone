@@ -1,0 +1,499 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+header {
+	width: 100%;
+}
+#btn-menu {
+	display: none;
+}
+header label {
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+}
+header label:hover {
+	cursor: pointer;
+}
+body {
+	background: #f6f6f6;
+}
+.nav {
+	width: 100%;
+	height: 75px;
+	border-bottom: 1px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	z-index: 99;
+}
+.items
+{
+    display: flex;
+    list-style: none;
+    position: relative;
+}
+.items>li>a
+{
+    margin: 0 25px;
+    padding: 7px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    font-family: 'Ubuntu Mono', monospace;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+.items>li>a:hover
+{	
+	transition: 0.3s;
+	color: grey;
+}
+.anuncio {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	color: white;
+	height: 40px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.img1:hover {
+	transition: 0.3s;
+	color: grey;
+}
+.titulo {
+	display: flex;
+	justify-content: center;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.item-slide img {
+	width: 100%;
+}
+.paginacion-items img {
+	margin-left: 0px;
+	width: 100%;
+}
+.contenedor-slider {
+	position: relative;
+	max-width: 1920px;
+	width: 100%;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: auto;
+}
+.slide {
+	display: flex;
+	transform: translate3d(0,0,0);
+	transition: all 600ms;
+	animation-name: autoplay;
+	animation-duration: 12s;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+.item-slide {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	flex-grow: 0;
+	max-width: 100%;
+}
+.paginacion {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.paginacion-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px solid white;
+	width: 16px;
+	height: 16px;
+	border-radius: 4px;
+	overflow: hidden;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 0 10px;
+	text-align: center;
+	transition: all 300ms;
+}
+.paginacion-item:hover {
+	transform: scale(2);
+}
+.paginacion-item img {
+	display: inline-block;
+	max-width: none;
+	height: 100%;
+	transform: scale(1);
+	opacity: 0;
+	transition: all 300ms;
+}
+.paginacion-item:hover img {
+	opacity: 1;
+	transform: scale(1);
+}
+input[id="1"]:checked ~ .slide{
+	animation: none;
+	transform: translate3d(0,0,0);
+}
+input[id="1"]:checked ~ .paginacion .paginacion-item[for="1"] {
+	background: #fff;
+}
+input[id="2"]:checked ~ .slide{
+	animation: none;
+	transform: translate3d(calc(-100% * 1),0,0);
+}
+input[id="2"]:checked ~ .paginacion .paginacion-item[for="2"] {
+	background: #fff;
+}
+input[id="3"]:checked ~ .slide{
+	animation: none;
+	transform: translate3d(calc(-100% * 2),0,0);
+}
+input[id="3"]:checked ~ .paginacion .paginacion-item[for="3"] {
+	background: #fff;
+}
+@keyframes autoplay{
+	33%{
+		transform: translate3d(calc(-100% * 0), 0, 0)
+	}
+	66%{
+		transform: translate3d(calc(-100% * 1), 0, 0)
+	}
+	100%{
+		transform: translate3d(calc(-100% * 2), 0, 0)
+	}
+}
+.titulo {
+	width: 60%;
+	border-top: 1px solid;
+	padding: 20px 5px;
+	position: relative;
+	top: 25px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+.titulo h1 {
+	font-size: 50px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.titulo2 {
+	width: 60%;
+	border-top: 1px solid;
+	padding: 20px 5px;
+	position: relative;
+	top: 40px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+.titulo2 h1 {
+	font-size: 50px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.titulo3 {
+	width: 60%;
+	border-top: 1px solid;
+	padding: 20px 5px;
+	position: relative;
+	top: 40px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+.titulo3 h1 {
+	font-size: 50px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.presentacion {
+	width: 60%;
+	padding: 0px 5px;
+	position: relative;
+	top: 15px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+.presentacion p {
+	font-size: 25px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.ubicacion {
+	width: 60%;
+	padding: 20px 5px;
+	position: relative;
+	top: 25px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.ubicacion p {
+	font-size: 25px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.ubicacion h1 {
+	font-size: 50px;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.redes {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+footer {
+	background: black;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	font-family: 'Ubuntu Mono', monospace;
+}
+.navegacion {
+	position: relative;
+	top: -43px;
+}
+.navegacion ul {
+	list-style: none;
+}
+.navegacion li a {
+	text-decoration: none;
+	color: white;
+}
+.navegacion li a:hover {
+	transition: 0.3s;
+	border-bottom: 1px solid #fff;
+}
+.pago {
+	position: relative;
+}
+.pago img {
+	width: 40px;
+}
+.contacto {
+	position: relative;
+	top: -68px;
+}
+.tel {
+	display: flex;
+	align-items: center;
+}
+.tel a {
+	text-decoration: none;
+	color: white;
+}
+.tel p {
+	position: relative;
+	left: 5px;
+}
+.email {
+	display: flex;
+}
+.email p {
+	position: relative;
+	left: 6px;
+}
+.email a {
+	text-decoration: none;
+	color: white;
+}
+input {
+	padding: 5px;
+	border: 1px solid #fff;
+	background: black;
+}
+input::placeholder {
+	color: white;
+}
+.newsletter {
+	position: relative;
+	top: -75px;
+}
+.e-newsletter {
+	position: relative;
+	top: 10px;
+}
+.firma {
+	width: 100%;
+	height: 40px;
+	background: #f6f6f6;
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.imgresponsive {
+	display: none;
+	position: absolute;
+	top: 45px;
+	left: 55px;
+}
+.imgresponsive img {
+	width: 85px;
+}
+@media (max-width: 375px) {
+	.anuncio {
+		font-size: 12px;
+		text-align: center;
+		padding: 15px;
+	}
+}
+@media (max-width: 825px){
+	header label {
+		display: block;
+	}
+	.nav {
+		position: absolute;
+		background: #f6f6f6;
+		margin-left: -125%;
+		top: 84px;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+	}
+	.img1 {
+		display: none;
+	}
+	.nav ul {
+		flex-direction: column;
+		padding: 15px;
+	}
+	.nav li {
+		border: 1px solid #000;
+	}
+	#btn-menu:checked ~ .nav {
+		margin: 0;
+	}
+
+	.contenedor-slider {
+		top: 15px;
+	}
+	.imgresponsive {
+		display: block;
+	}
+	.presentacion {
+		flex-direction: column;
+		padding: 5px;
+	}
+	.caja2 {
+		position: relative;
+		top: 15px;
+	}
+	.titulo2 {
+		top: 45px;
+	}
+	.ubicacion {
+		flex-direction: column;
+	}
+	.redes {
+		position: relative;
+		top: 25px;
+	}
+	.redes img {
+		width: 125px;
+	}
+	footer {
+		position: relative;
+		top: 50px;
+		height: 700px;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.navegacion {
+		right: 40px;
+		top: 0;
+	}
+	.pago {
+		top: -15px;
+	}
+	.contacto {
+		top: -35px;
+		right: 20px;
+	}
+	.newsletter {
+		top: -50px;
+	}
+	.firma {
+		position: relative;
+		top: 15px;
+	}
+}
+@media (max-width: 1024px) {
+		.presentacion {
+		flex-direction: column;
+		padding: 5px;
+	}
+	.caja2 {
+		position: relative;
+		top: 15px;
+	}
+	.titulo2 {
+		top: 45px;
+	}
+	.ubicacion {
+		flex-direction: column;
+	}
+	.redes {
+		position: relative;
+		top: 25px;
+	}
+	.redes img {
+		width: 125px;
+	}
+	.firma {
+		position: relative;
+		top: 50px;
+	}
+	footer {
+		position: relative;
+		top: 50px;
+	}
+}
+@media (max-width: 540px) {
+	.anuncio {
+		text-align: center;
+		padding: 5px;
+	}
+	iframe {
+		width: 450px;
+	}
+	.firma {
+		top: 15px;
+	}
+}
+@media (max-width: 414px) {
+	iframe {
+		width: 350px;
+	}
+	.nav ul {
+		padding: 0;
+	}
+}
